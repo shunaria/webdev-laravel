@@ -1,9 +1,11 @@
-@extends('layout')
+@extends('layouts.master')
+
+@section('title', 'Home - My Personal Blog')
 
 @section('content')
     <h1>Welcome to My Blog</h1>
     
-    <div class="intro-section">
+        <div class="intro-section">
         <p>Hello! I'm <strong>Christian Laury</strong>, a passionate web developer and writer who is trying to survive.</p>
         
         <p>This is blog is where gonna be my digital diary where i will tell my journey to be where i am right now to those who see this blog.</p>
@@ -16,5 +18,4 @@
         </div>
         
         <p>Thank you for visiting my blog. I hope you find something here that inspires you or helps you in your own journey. Happy reading!</p>
-    </div>
 @endsection

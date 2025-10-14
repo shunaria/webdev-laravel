@@ -1,7 +1,10 @@
-@extends('layout')
+@extends('layouts.master')
+
+@section('title', 'About Me - My Personal Blog')
 
 @section('content')
     <h1>About Me</h1>
+
     
     <div style="display: flex; gap: 30px; margin-bottom: 30px;">
         <div style="flex: 2;">

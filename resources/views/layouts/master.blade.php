@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Blog</title>
+    <title>@yield('title', 'My Personal Blog')</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -39,7 +39,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 10% 20%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 90% 80%, rgba(255, 119, 198, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 50% 50%, rgba(120, 219, 255, 0.05) 0%, transparent 70%);
@@ -70,7 +70,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 10% 10%, rgba(255,255,255,0.1) 0%, transparent 30%),
                 radial-gradient(circle at 90% 90%, rgba(255,255,255,0.05) 0%, transparent 30%);
             pointer-events: none;
@@ -176,7 +176,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image:
+            background-image: 
                 radial-gradient(circle at 20% 30%, rgba(120, 119, 198, 0.05) 0%, transparent 40%),
                 radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.05) 0%, transparent 40%);
             z-index: -1;
@@ -380,35 +380,12 @@
 </head>
 <body>
     <div class="container">
-        <div class="sidebar">
-            <div class="sidebar-header">
-                <img src="{{ asset('image/images.jpeg') }}" alt="Profile" class="profile-img">
-                <h2>Christian Laury</h2>
-                <p>APP DEVELOPER</p>
-            </div>
-            
-            <div class="sidebar-nav">
-                <ul>
-                    <li><a href="/" class="{{ request()->is('/') ? 'active' : '' }}"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="/about" class="{{ request()->is('about') ? 'active' : '' }}"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="/blog" class="{{ request()->is('blog') ? 'active' : '' }}"><i class="fas fa-blog"></i> Blog</a></li>
-                    <li><a href="/contact" class="{{ request()->is('contact') ? 'active' : '' }}"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="social-links">
-                <a href="https://www.instagram.com/shunaria_wolts276"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/christian-laury-98443333b/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/shunaria"><i class="fab fa-github"></i></a>
-            </div>
-        </div>
+        @include('partials.menu')
         
         <div class="content">
             @yield('content')
             
-            <div class="footer">
-                <p>&copy; {{ date('Y') }} My Personal Blog. All rights reserved.</p>
-            </div>
+            @include('partials.footer')
         </div>
     </div>
 </body>
