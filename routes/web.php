@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\NamaModel;
+use App\Models\Project;
+use App\Models\Experience;
 
 Route::get('/', function () {
     return view('home');
@@ -11,7 +14,18 @@ Route::get('/about', function () {
 });
 
 Route::get('/blog', function () {
-    return view('blog');
+    $blog = NamaModel::all();
+    return view('blog', ['blogs' => $blog]);
+});
+
+Route::get('/project', function () {
+    $projects = Project::all();
+    return view('project', ['projects' => $projects]);
+});
+
+Route::get('/experiences', function () {
+    $experiences = Experience::all();
+    return view('Experience', ['experiences' => $experiences]);
 });
 
 Route::get('/contact', function () {
