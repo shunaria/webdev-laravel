@@ -7,10 +7,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class NamaModel extends Model
 {
-use HasFactory;
+    use HasFactory;
     protected $fillable = [
         'Judul',
         'Isi',
-        
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

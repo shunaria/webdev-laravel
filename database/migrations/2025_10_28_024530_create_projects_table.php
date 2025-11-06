@@ -10,6 +10,7 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {  // Changed from 'Project' to 'projects'
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
             $table->string('judul');  // Changed to lowercase to match factory
             $table->date('tanggal mulai');

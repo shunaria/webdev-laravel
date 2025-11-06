@@ -15,6 +15,9 @@
                             <span class="badge bg-info">End: {{ \Carbon\Carbon::parse($project->{'tanggal selesai'})->format('d M Y') }}</span>
                         </div>
                         <p class="card-text text-dark">{{ $project->informasi }}</p>
+                        <div class="mt-3">
+                            <small class="text-muted">Created by: <strong>{{ $project->user->name }}</strong></small>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@
         <div class="card-body">
             <h3>{{ $blog->Judul }}</h3>
             <p>{{ $blog->Isi }}</p>
+            <small class="text-muted">Written by: <strong>{{ $blog->user->name }}</strong></small>
         </div>
     </div>
 @endforeach

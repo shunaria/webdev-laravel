@@ -15,6 +15,12 @@ class Project extends Model
         'judul',
         'tanggal mulai',
         'tanggal selesai',
-        'informasi'
+        'informasi',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

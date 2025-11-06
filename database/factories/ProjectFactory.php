@@ -15,6 +15,7 @@ class ProjectFactory extends Factory
     public function definition(): array
     {
         return [
+            'user_id' => \App\Models\User::factory(),
             'judul' => fake()->sentence(),
             'tanggal mulai' => fake()->date(),
             'tanggal selesai' => fake()->date(),

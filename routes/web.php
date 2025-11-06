@@ -13,15 +13,9 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/blog', function () {
-    $blog = NamaModel::all();
-    return view('blog', ['blogs' => $blog]);
-});
+Route::get('/blog', [App\Http\Controllers\BlogController::class, 'index']);
 
-Route::get('/project', function () {
-    $projects = Project::all();
-    return view('project', ['projects' => $projects]);
-});
+Route::get('/project', [App\Http\Controllers\ProjectController::class, 'index']);
 
 Route::get('/experiences', function () {
     $experiences = Experience::all();
